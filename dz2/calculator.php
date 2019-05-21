@@ -1,8 +1,16 @@
 <?php
+session_start();
 
 $operands = ['+','-','*','/'];
-$result = $first = $second = $operand = '';
 
+if (empty($_SESSION)) {
+    $result = $first = $second = $operand = '';
+} else {
+    $first = $_SESSION['first'];
+    $second = $_SESSION['second'];
+    $operand = $_SESSION['operand'];
+    $result = $_SESSION['result'];
+}
 
 if (isset($_POST['submit'])) {
 
@@ -28,9 +36,14 @@ if (isset($_POST['submit'])) {
                 break;
             default:
                 $result = 'Check your input data';
-
         }
     }
-}
+    $_SESSION['first'] = $first;
+    $_SESSION['second'] = $second;
+    $_SESSION['operand'] = $operand;
+    $_SESSION['result'] = $result;
 
+    header('Location:'.$_SERVER['PHP_SELF']);
+    exit;
+}
 require_once 'calculatorView.php';
