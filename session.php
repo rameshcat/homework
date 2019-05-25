@@ -1,20 +1,20 @@
 <?php
 $visitorCount = 0;
-$lastVisit = date("Y-m-d", strtotime("+3 days"));
+$lastVisit = date("Y-m-d");
+$currentVisit = date("Y-m-d");
 $expireTime = strtotime("+3 days");
 
-
 if (isset($_COOKIE['visitorCount'])) {
-    $visitorCount = $_COOKIE['visitorCount'];
-
-
+    $visitorCount = $_COOKIE['visitorCount']++;
 }
+
 if (isset($_COOKIE['lastVisit'])) {
     $lastVisit = $_COOKIE['lastVisit'];
-
 }
-setcookie('visitorCount', ++$visitorCount, $expireTime);
-setcookie('lastVisit', $lastVisit, $expireTime);
+if (($lastVisit !== $currentVisit)||(!isset($_COOKIE['visitorCount']))) {
+    setcookie('visitorCount', ++$visitorCount, $expireTime);
+    setcookie('lastVisit', $currentVisit, $expireTime);
+}
 ?>
 
 <!doctype html>
@@ -30,7 +30,7 @@ setcookie('lastVisit', $lastVisit, $expireTime);
     <?php if($visitorCount == 1):?>
         <p>Hello you are at first time!</p>
     <?php else:?>
-        <p>You are at <?php echo $visitorCount;?> time. Last visit was at <?php echo $lastVisit;?></p>
+        <p>You are at <?php echo $visitorCount;?> time. Last visit was at <?php echo date("d M Y (l)", strtotime ($lastVisit));?></p>
     <?php endif;?>
 </body>
 </html>
