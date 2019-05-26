@@ -1,19 +1,3 @@
-<?php
-$menu = 0;
-if (isset($_POST['quiz'])) {
-    $menu = 1;
-    setcookie('menu', 1);
-}
-if (isset($_POST['multiple'])) {
-    $menu = 2;
-    setcookie('menu', 2);
-}
-
-if (isset($_COOKIE['menu'])) {
-    $menu = $_COOKIE['menu'];
-}
-
-?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -22,6 +6,14 @@ if (isset($_COOKIE['menu'])) {
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        ul{
+            list-style: none;
+        };
+        a{
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
 <table width="100%">
@@ -30,34 +22,21 @@ if (isset($_COOKIE['menu'])) {
     </tr>
     <tr style="height: 600px">
         <td width="20%" style="background-color: lightblue; text-align: center; vertical-align: top">
-            <form action="" method="post" name="menu">
-                <ul>
-                    <li><input type="submit" name="quiz">QUIZ</li>
-                </ul>
-            </form>
-            <form action="" method="post" name="multiple">
-                <ul>
-                    <li><input type="submit" name="multiple">MULTIPLE</li>
-                </ul>
-            </form>
+            <ul style="text-decoration: none;">
+                <li><a href="../quiz/index.php">QUIZ</a></li>
+            </ul>
+
+            <ul>
+                <li><a href="multiple.php">MULTIPLE</a></li>
+            </ul>
         </td>
         <td style="background-color: aliceblue; vertical-align: top">
-            <?php switch ($menu) {
-                case 1:
-                    include("../quiz/index.php");
-                    break;
-                case 2:
-                    include("multiple.php");
-                    break;
-                default: echo 'welcome';
-            }?>
+            Добро пожаловать на мой сайт
         </td>
     </tr>
     <tr>
         <td colspan="2" style="height: 100px; background-color: azure; text-align: center">Footer</td>
     </tr>
 </table>
-<?php print_r($_POST); ?>
-<?php print_r($_SESSION); ?>
 </body>
 </html>
