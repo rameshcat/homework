@@ -18,3 +18,4 @@ if (isset($_SESSION['answers'])) {
 ?>
 <p>Your result is <?php echo $result ?> from <?php echo count($questions) ?></p>
 <p><a href="index.php">Start the test again</a></p>
+<?php setcookie('menu',0);
