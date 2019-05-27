@@ -9,13 +9,12 @@ if (isset($_SESSION['answers'])) {
     foreach ($_SESSION['answers'] as $key => $value) {
 // если ответ пользователя правильный, то увеличиваем счетчик
         if ($value == $answers[$key]) {
-            $result ++;
+            $result++;
         }
     }
 // разрываем сессию
-    session_destroy();
+    // session_destroy();
 }
 ?>
 <p>Your result is <?php echo $result ?> from <?php echo count($questions) ?></p>
 <p><a href="index.php">Start the test again</a></p>
-<?php setcookie('menu',0);

@@ -1,0 +1,66 @@
+body {
+    margin: 0;
+    padding: 0;
+    color: darkslateblue;
+}
+
+table {
+    margin: 0;
+    padding: 0;
+}
+
+tr {
+    margin: 0;
+    padding: 0;
+}
+
+td {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+    margin: 2px 2px 0 2px;
+    padding: 0;
+}
+
+li {
+    background-color: lavender;
+    height: 50px;
+    padding-top: 25px;
+    border-radius: 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.mainMenu {
+    display: inline-block;
+    width: 100px;
+}
+
+.textInput {
+    border-radius: 10px;
+    border: 1px;
+    width: 100%;
+    height: 50px;
+    font-size: x-large;
+    color: darkslateblue;
+
+}
+
+.submitButton {
+    background-color: aqua;
+    border-radius: 10px;
+    border: 1px;
+    width: 100%;
+    height: 50px;
+    font-size: x-large;
+    color: darkslateblue;
+}
+
+#main {
+    padding: 100px;
+}
