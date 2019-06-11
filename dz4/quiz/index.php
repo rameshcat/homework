@@ -26,8 +26,8 @@ if (isset($_POST['question'])) {
 // получаем список вопросов
 $questions = parse_ini_file('questions.ini', true);
 ?>
-<?php include_once('../dz4/header.php'); ?>
-<?php include_once('../dz4/menu.php'); ?>
+<?php include_once('../header.php'); ?>
+<?php include_once('../menu.php'); ?>
 
 
 <td id="main" style="background-color: aliceblue; vertical-align: top">
@@ -43,4 +43,4 @@ $questions = parse_ini_file('questions.ini', true);
     } ?>
 </td>
 
-<?php include_once('../dz4/footer.php'); ?>
+<?php include_once('../footer.php'); ?>
