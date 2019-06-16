@@ -1,3 +1,4 @@
+<?php header("Refresh: 3; url=http://shop.my/guestbook/index.php");?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -11,4 +12,3 @@
 <h2>Your comment has been added successfully</h2>
 </body>
 </html>
-<?php header("Refresh: 3; url=http://shop.my/guestbook/index.php");
