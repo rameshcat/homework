@@ -9,13 +9,15 @@
 </head>
 <body>
 <form method="get" action="index.php">
-    <p>Input ID</p>
-    <input type="text" name="id"/><br/><br/>
+    <p>Input workers ID</p>
+    <label>
+        <input type="text" name="id"/><br/><br/>
+    </label>
     <input type="submit" name="submit"/>
 </form>
 <br/><br/>
-<?php if (!empty($_GET['id'])):?>
-    <p>Information about worker with ID <?= $_GET['id'];?></p>
+<?php if (!empty($_GET['id'])): ?>
+    <p>Information about worker with ID <?= $_GET['id']; ?></p>
 <? endif; ?>
 </body>
 </html>

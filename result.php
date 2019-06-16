@@ -15,9 +15,9 @@
             <th>Salary</th>
         </tr>
         <tr>
-            <td><?= $view['name']?></td>
-            <td><?= $view['age']?></td>
-            <td><?= $view['salary']?></td>
+            <td><?= $result['name']?></td>
+            <td><?= $result['age']?></td>
+            <td><?= $result['salary']?></td>
         </tr>
     </table>
 </body>
