@@ -43,9 +43,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if ($user) {
         addComment($user['id'], $comment);
+        header('Location:' . SITE . '/guestbook/success.php');
+        exit;
+    } else {
+        header('Location:' . SITE . '/guestbook/error.php');
+        exit;
     }
-
-    header('Location:' . SITE . '/guestbook/index.php');
 }
 
 
