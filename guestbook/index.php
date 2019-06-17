@@ -27,7 +27,7 @@ include_once('./../autoload.php');
                       name="comment"><? if (isset($_SESSION['comment'])) echo $_SESSION['comment'] ?></textarea>
         </div>
         <div>
-            <input class="submitButton" type="submit" name="submit" value="Send comment"/>
+            <input class="submitButton" type="submit" name="submitComment" value="Send comment"/>
         </div>
     </form>
     <div style="width: 80%; padding-top: 10px">
