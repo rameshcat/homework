@@ -1,4 +1,4 @@
-<?php header("Refresh: 3; url=http://shop.my/guestbook/index.php");?>
+<?php header("Refresh: 2; url=http://shop.my/guestbook/index.php");?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -9,6 +9,6 @@
     <title>Document</title>
 </head>
 <body>
-<h2>Your comment has been added successfully</h2>
+    <h2>Your comment has been added successfully</h2>
 </body>
 </html>
