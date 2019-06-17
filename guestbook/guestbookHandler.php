@@ -35,7 +35,7 @@ function handleVariable($variable)
     return strip_tags(trim($variable));
 }
 
-function validation ($username, $email, $comment)
+function validation($username, $email, $comment)
 {
     $error = [];
 
@@ -67,7 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (empty($errors)) {
         $user = getUser($username, $email);
         if (!$user) {
-        $errors[] = 'Such user does not exist';
+            $errors[] = 'Such user does not exist';
         }
     }
 
@@ -76,7 +76,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         session_destroy();
         header('Location:' . SITE . '/guestbook/success.php');
         exit;
-    } $_SESSION['errors'] = $errors;
+    }
+    $_SESSION['errors'] = $errors;
 
     header('Location:' . SITE . '/guestbook/index.php');
 }

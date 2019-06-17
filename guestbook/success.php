@@ -1,4 +1,4 @@
-<?php header("Refresh: 2; url=http://shop.my/guestbook/index.php");?>
+<?php header("Refresh: 2; url=http://shop.my/guestbook/index.php"); ?>
 <!doctype html>
 <html lang="en">
 <head>

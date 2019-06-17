@@ -1,5 +1,5 @@
 <?php
-include_once ('./../autoload.php');
+include_once('./../autoload.php');
 ?>
 <!doctype html>
 <html lang="en">
@@ -14,22 +14,24 @@ include_once ('./../autoload.php');
 <h4>GUEST BOOK</h4>
 <?php if (isset($_SESSION['errors'])) {
     foreach ($_SESSION['errors'] as $error) {
-        echo '<p style="color: red">'.$error.'</p>' ;
+        echo '<p style="color: red">' . $error . '</p>';
     }
-}?>
+} ?>
 <p>Leave your comment:</p>
 <form method="post" name="guestbook" action="guestbookHandler.php">
     <div>
         <label for="username">Name:</label>
-        <input id="username" name="username" value="<? if(isset($_SESSION['username'])) echo $_SESSION['username']?>"/>
+        <input id="username" name="username"
+               value="<? if (isset($_SESSION['username'])) echo $_SESSION['username'] ?>"/>
     </div>
     <div>
         <label for="email">E-mail:</label>
-        <input id="email" name="email" value="<? if(isset($_SESSION['email'])) echo $_SESSION['email']?>"/>
+        <input id="email" name="email" value="<? if (isset($_SESSION['email'])) echo $_SESSION['email'] ?>"/>
     </div>
     <div>
         <label for="comment">Comment:</label>
-        <textarea id="comment" cols="50" rows="7" name="comment"><? if(isset($_SESSION['comment'])) echo $_SESSION['comment']?></textarea>
+        <textarea id="comment" cols="50" rows="7"
+                  name="comment"><? if (isset($_SESSION['comment'])) echo $_SESSION['comment'] ?></textarea>
     </div>
     <div>
         <input type="submit" name="submit" value="Send comment"/>
@@ -41,7 +43,7 @@ include_once ('./../autoload.php');
         foreach ($comments as $comment):?>
             <tr>
                 <td>From: <?= $comment['username']; ?></td>
-                <td>Date: <?= $comment['created_at']; ?></td>
+                <td align="right">Date: <?= $comment['created_at']; ?></td>
             </tr>
             <tr>
                 <td colspan="2"><?= $comment['comment']; ?></td>
