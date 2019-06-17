@@ -10,4 +10,9 @@
                 <li>MULTIPLE TABLE</li>
             </a>
         </ul>
+        <ul>
+            <a href="<?= BASE_URL_GUEST_BOOK;?>">
+                <li>GUEST BOOK</li>
+            </a>
+        </ul>
     </td>

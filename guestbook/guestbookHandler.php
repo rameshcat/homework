@@ -62,22 +62,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $_SESSION['email'] = $email;
     $_SESSION['comment'] = $comment;
 
-    $errors = validation($username, $email, $comment);
+    $gberrors = validation($username, $email, $comment);
 
-    if (empty($errors)) {
+    if (empty($gberrors)) {
         $user = getUser($username, $email);
         if (!$user) {
-            $errors[] = 'Such user does not exist';
+            $gberrors[] = 'Such user does not exist';
         }
     }
 
-    if (empty($errors)) {
+    if (empty($gberrors)) {
         addComment($user['id'], $comment);
-        session_destroy();
+        //session_destroy();
+        $_SESSION['username'] = '';
+        $_SESSION['email'] = '';
+        $_SESSION['comment'] = '';
+        $_SESSION['gberrors'] = [];
         header('Location:' . SITE . '/guestbook/success.php');
         exit;
     }
-    $_SESSION['errors'] = $errors;
+    $_SESSION['gberrors'] = $gberrors;
 
     header('Location:' . SITE . '/guestbook/index.php');
 }
