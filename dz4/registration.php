@@ -4,8 +4,8 @@ include_once('menu.php');
 ?>
 <td id="main" style="background-color: aliceblue;">
     <div style="width: fit-content; margin-left: 330px">
-        <? if (!empty($_SESSION['error'])): ?>
-            <? foreach ($_SESSION['error'] as $e): ?>
+        <?php if (!empty($_SESSION['error'])): ?>
+            <?php foreach ($_SESSION['error'] as $e): ?>
                 <h2 style="color: darkred;">
                     <?= $e; ?>
                 </h2>

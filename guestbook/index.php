@@ -15,16 +15,16 @@ include_once('./../autoload.php');
         <div>
             <label for="username">Name:</label>
             <input class="textInput" id="username" name="username"
-                   value="<? if (isset($_SESSION['username'])) echo $_SESSION['username'] ?>"/>
+                   value="<?php if (isset($_SESSION['username'])) echo $_SESSION['username'] ?>"/>
         </div>
         <div>
             <label for="email">E-mail:</label>
-            <input class="textInput" id="email" name="email" value="<? if (isset($_SESSION['email'])) echo $_SESSION['email'] ?>"/>
+            <input class="textInput" id="email" name="email" value="<?php if (isset($_SESSION['email'])) echo $_SESSION['email'] ?>"/>
         </div>
         <div>
             <label for="comment">Comment:</label>
             <textarea id="comment" cols="50" rows="7"
-                      name="comment"><? if (isset($_SESSION['comment'])) echo $_SESSION['comment'] ?></textarea>
+                      name="comment"><?php if (isset($_SESSION['comment'])) echo $_SESSION['comment'] ?></textarea>
         </div>
         <div>
             <input class="submitButton" type="submit" name="submitComment" value="Send comment"/>
